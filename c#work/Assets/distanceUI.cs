@@ -8,7 +8,7 @@ public class distanceUI : MonoBehaviour
     GameObject circle;
     GameObject goal;
     GameObject distance;
-
+    float length;
     void Start()
     {
         this.circle = GameObject.Find("Circle");
@@ -18,14 +18,14 @@ public class distanceUI : MonoBehaviour
 
     void Update()
     {
-        float length = this.goal.transform.position.x - this.circle.transform.position.x;
-        if (length >= 0)
-        {
-            this.distance.GetComponent<Text>().text = "ÉSÅ[ÉãÇ‹Ç≈" + length.ToString("F2") + "m";
-        }
-        else
-        {
-            this.distance.GetComponent<Text>().text = "Game Over";
+        length= this.goal.transform.position.x - this.circle.transform.position.x;
+       
+    }
+    public void OnClick( ) {
+        if( length >= 0 ) {
+            this.distance.GetComponent<Text>( ).text = "Ç“Ç¡ÇΩÇËÇ‹Ç≈" + length.ToString( "F2" ) + "m";
+        } else {
+            this.distance.GetComponent<Text>( ).text = "Game Over";
         }
     }
 }
